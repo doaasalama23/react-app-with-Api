@@ -18,8 +18,8 @@ export default class Home extends Component
       <>
      <h2 className='bg-dark text-white text-center'>ان شاء الله هبقى حد مهم جدا فى الرياكت</h2>
       <div className='row'>
-        {this.state.recipes.length>0?this.state.recipes.map((recipe)=>
-          <div className='col-md-4 my-3'>
+        {this.state.recipes.length>0?this.state.recipes.map((recipe,index)=>
+          <div key={index} className='col-md-4 my-3'>
             <img className={`${style.imgh} w-100`} src={recipe.image_url}></img>
             <h5>{recipe.title}</h5>
           </div>

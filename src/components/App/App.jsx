@@ -6,6 +6,7 @@ import Navbar from '../Navbar/Navbar.jsx';
 import Notfound from '../Notfound/Notfound.jsx';
 import Parent from '../Parent/Parent.jsx';
 import { Route, Routes } from 'react-router-dom';
+import Contact from '../Contact/Contact.jsx';
 export default class App extends Component
 {
   state={
@@ -31,6 +32,8 @@ export default class App extends Component
               </Route>
             </Route>
             <Route path='gallery' element={ <Parent/>}>
+            </Route>
+            <Route path='contact' element={ <Contact/>}>
             </Route>
             <Route path='*' element={<Notfound/>}>
             </Route>
