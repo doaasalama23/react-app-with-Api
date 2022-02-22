@@ -3,6 +3,8 @@ import Home from '../Home/Home.jsx';
 import Footer from '../Footer/Footer.jsx';
 import About from '../About/About.jsx';
 import Navbar from '../Navbar/Navbar.jsx';
+import Classcom from '../Classcom/Classcom.jsx';
+import Funcom from '../Funcom/Funcom.jsx';
 import Notfound from '../Notfound/Notfound.jsx';
 import Parent from '../Parent/Parent.jsx';
 import { Route, Routes } from 'react-router-dom';
@@ -10,13 +12,15 @@ import Contact from '../Contact/Contact.jsx';
 export default class App extends Component
 {
   state={
-    name:"doaaaaa",
+    name:"doaaaaa salama",
     age:30
   }
   render(){
     return(
       <>
       <Navbar/>
+        <Funcom userdata={this.state.age}/>
+        <Classcom useriame={this.state.name}/>
         <div className='container'>
           <Routes>
           <Route path='/' element={ <About/>}>
