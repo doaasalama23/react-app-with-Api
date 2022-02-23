@@ -1,18 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Funcom({userdata}){
-    let myState={
-        name:'doaa',
-        salary:20000,
-        age:37
+    let[name,changeName]=useState('doaa');
+    let[age,setage]=useState(30);
+    let[salary,setsalary]=useState(5000);
+    function changeuserName(){
+      changeName('mariem')
     }
-    function wellcom(){
-        alert('wellcom')
+    function changeAge(){
+      age++;
+      setage(age)
     }
+    function changesalary(){
+      salary++;
+      setsalary(salary)
+    }
+    useEffect(()=>{
+      if(name!='doaa'){
+        console.log('Did update') //make change & update
+        }
+      },[name,age]);//make change when make in name and age
+
+      useEffect(()=>{
+        if(salary!=5000){
+          alert('Did update salary') //make change & update in salary
+          }
+        },[salary]);
   return (
     <>
-        <div>age:{userdata}</div>
-        <button onClick={wellcom} className='btn btn-info my-3'>fun</button>
+        <div>name:{name}</div>
+        <div>age:{age}</div>
+        <div>salary:{salary}</div>
+        <button onClick={changeuserName} className='btn btn-info my-3'>change name</button>
+        <button onClick={changeAge} className='btn btn-info my-3'>change age</button>
+        <button onClick={changesalary} className='btn btn-info my-3'>change salary</button>
     </>
   )
 }
